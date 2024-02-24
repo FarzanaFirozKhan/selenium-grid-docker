@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Docker Grid" parallel="tests" thread-count="2">
-	<test name="Chrome">
-	<parameter name="browser" value="chrome"></parameter>
-		<classes>
-			<class name="seldocker.GridTest"></class>
-		</classes>
-	</test>
-	<test name="Firefox">
+<suite parallel="tests" name="Docker Grid" thread-count="3">
+  <test name="Chrome">
+	  <parameter name="browser" value="chrome"></parameter>
+    <classes>
+      <class name="seldocker.GridTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Firefox">
 	<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="seldocker.GridTest"></class>
@@ -19,4 +18,4 @@
 			<class name="seldocker.GridTest"></class>
 		</classes>
 	</test>
-</suite>
+</suite> <!-- Suite -->
