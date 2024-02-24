@@ -8,7 +8,7 @@ pipeline {
                 bat "docker-compose -f ${WORKSPACE}\\docker-compose.yaml up -d"
             }
         }
-		stage('mvn clean') {
+		stage('Clean mvn') {
             steps {
                 // Run TestNG tests with parameters
                 bat "mvn clean"
