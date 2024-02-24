@@ -76,10 +76,12 @@ public class GridTest {
 
   @BeforeSuite
   public void beforeSuite() {
+	  CommonMethods.runTerminalCommand("docker-compose up","Registered a node");
   }
 
   @AfterSuite
   public void afterSuite() {
+	  CommonMethods.runTerminalCommand("docker-compose down","Removing selenium-hub");
   }
 
 }
