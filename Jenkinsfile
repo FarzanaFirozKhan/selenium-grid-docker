@@ -2,12 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Build Docker Images') {
-            steps {
-                // Build Docker images using Docker Compose
-                bat "docker-compose -f ${WORKSPACE}\\docker-compose.yaml build"
-            }
-        }
         stage('Run Docker Containers') {
             steps {
                 // Run Docker containers using Docker Compose
