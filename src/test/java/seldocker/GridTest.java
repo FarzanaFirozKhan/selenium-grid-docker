@@ -35,20 +35,24 @@ public class GridTest {
 			cap.setBrowserName("chrome");
 			cap.setCapability("name", "ChromeTest"); //
 			driver = new RemoteWebDriver(url, cap);
-			driver.get("https://www.google.com");
+			driver.get("https://www.amazon.in");
+			System.out.println("Chrome Title: " + driver.getTitle());
 		}else if(browser.equalsIgnoreCase("firefox"))
 		{
 			cap.setCapability(CapabilityType.BROWSER_NAME,BrowserType.FIREFOX);
 			driver = new RemoteWebDriver(url, cap);
-			driver.get("https://www.facebook.com");
+			driver.get("https://www.amazon.in");
+			System.out.println("Chrome Title: " + driver.getTitle());
 		}
 		else if(browser.equalsIgnoreCase("edge"))
 		{
 			cap.setCapability(CapabilityType.BROWSER_NAME,BrowserType.EDGE);
 			driver = new RemoteWebDriver(url, cap);
-			driver.get("https://www.amazon.com");
+			driver.get("https://www.amazon.in");
+			System.out.println("Chrome Title: " + driver.getTitle());
 		}
 		System.out.println("=> Öpening in the "+browser);
+		
 	}
   @BeforeMethod
   public void beforeMethod() {
@@ -76,12 +80,10 @@ public class GridTest {
 
   @BeforeSuite
   public void beforeSuite() {
-	  CommonMethods.runTerminalCommand("docker-compose up","Registered a node");
   }
 
   @AfterSuite
   public void afterSuite() {
-	  CommonMethods.runTerminalCommand("docker-compose down","Removing selenium-hub");
   }
 
 }
