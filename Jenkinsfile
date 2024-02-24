@@ -11,7 +11,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run TestNG tests with parameters
-                bat "mvn clean test -Dtestngfile=${WORKSPACE}\\src\\test\\java\\testng.xml -Dbrowser=chrome"
+                bat "mvn clean test -Dtestngfile=${WORKSPACE}\\src\\test\\java\\TestNG.xml -Dbrowser=chrome"
             }
         }
     }
