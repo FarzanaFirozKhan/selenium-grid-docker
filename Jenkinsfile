@@ -5,19 +5,19 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 // Build Docker images using Docker Compose
-                sh 'docker-compose -f /path/to/docker-compose.yml build'
+                bat 'docker-compose -f C:\\path\\to\\docker-compose.yml build'
             }
         }
         stage('Run Docker Containers') {
             steps {
                 // Run Docker containers using Docker Compose
-                sh 'docker-compose -f /path/to/docker-compose.yml up -d'
+                bat 'docker-compose -f C:\\path\\to\\docker-compose.yml up -d'
             }
         }
         stage('Run Tests') {
             steps {
                 // Run TestNG tests with parameters
-                sh 'mvn clean test -Dtestngfile=/path/to/testng.xml -Dbrowser=chrome'
+                bat 'mvn clean test -Dtestngfile=C:\\path\\to\\testng.xml -Dbrowser=chrome'
             }
         }
     }
@@ -25,7 +25,7 @@ pipeline {
     post {
         always {
             // Cleanup: Stop and remove Docker containers
-            sh 'docker-compose -f /path/to/docker-compose.yml down'
+            bat 'docker-compose -f C:\\path\\to\\docker-compose.yml down'
         }
     }
 }
